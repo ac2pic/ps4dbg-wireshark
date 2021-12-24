@@ -69,7 +69,7 @@ function ps4debug_proto.dissector(buffer,pinfo,tree)
 		subtree:add(buffer(),cmd_number)
 		if client and server then
 			conn = create_connection(client, server)
-			pinfo.cols.info = string.format("cmd=%s conversation",conn.cache[cmd_number]["cmd"] or 'not set')
+			pinfo.cols.info = string.format("cmd=%s conversation",conn.cached[cmd_number]["cmd"] or 'not set')
 		end
 
 	end
